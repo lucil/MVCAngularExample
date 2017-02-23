@@ -1,0 +1,39 @@
+﻿<div class="row padding-left">
+    <div class="container-fluid">
+        <h3 class="">Listini</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Codice</th>
+                    <th rowspan="2">Descrizione</th>
+                    <th>Numero di prodotti</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in pricelists">
+                    <td>{{item.priceListId}}</td>
+                    <td>{{item.priceListCode}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.numberOfProducts}}</td>
+                    <td><a ng-href="#/pricelists/edit/{{item.priceListId}}" data-toggle="tooltip" title="Modifica" tooltip><i class="fa fa-pencil-square-o fa-fw icon-large"></i></a></td>
+                    <td ng-if="!item.containsProducts">
+                        <i class="fa fa-cubes fa-fw text-muted" data-toggle="tooltip" title="Questo listino non contiene nessun prodotto." tooltip></i>
+                    </td>
+                    <td ng-if="item.containsProducts">
+                        <a ng-href="#/pricelists/products/{{item.priceListId}}" data-toggle="tooltip" title="Visualizza prodotti" tooltip><i class="fa fa-cubes fa-fw"></i></a>
+                    </td>
+                    <td ng-if="!item.containsProducts">
+                        <i ng-click="deletePricelist(item.priceListId)" class="fa fa-remove fa-fw text-danger icon-large cur-p" data-toggle="tooltip" title="Cancella" tooltip></i>
+                    </td>
+                    <td ng-if="item.containsProducts">
+                        <i class="fa fa-remove fa-fw text-muted icon-large" data-toggle="tooltip" title="Il listino non può essere cancellato in quanto contiene uno o più prodotti." tooltip></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

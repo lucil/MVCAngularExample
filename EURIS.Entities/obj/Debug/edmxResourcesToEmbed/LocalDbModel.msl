@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LocalDbModelStoreContainer" CdmEntityContainer="LocalDbEntities">
+    <EntitySetMapping Name="ProdottoSet">
+      <EntityTypeMapping TypeName="LocalDbModel.Prodotto">
+        <MappingFragment StoreEntitySet="ProdottoSet">
+          <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+          <ScalarProperty Name="Codice" ColumnName="Codice" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,792 @@
+<?xml version="1.0"?>
+<!--Processed by Cobisi XmlDocFilter v0.2.4270.14316 on 1/17/2013 3:15:52 PM.-->
+<doc>
+  <assembly>
+    <name>Cobisi.Web.MvcExtensions</name>
+  </assembly>
+  <members>
+    <member name="T:Cobisi.Web.MvcExtensions.AssemblyNamespaceMapperRegistry">
+      <summary>
+            Allows to register namespace mappers for assemblies and retrieve maps for specific assembly and namespace pair.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.AssemblyNamespaceMapperRegistry.Clear">
+      <summary>
+            Removes all the namespace mappers registrations.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.AssemblyNamespaceMapperRegistry.Register(System.String,Cobisi.Web.MvcExtensions.INamespaceMapper)">
+      <summary>
+            Register a namespace mapper for a specific assembly name.
+            </summary>
+      <param name="assemblyName">The simple name of the assembly which takes place in the registration.</param>
+      <param name="namespaceMapper">The namespace mapper bound to the assembly in the registration.</param>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.AssemblyNamespaceMapperRegistry.Map(System.String,System.String)">
+      <summary>
+            Returns the mapping for a specific assembly and namespace pair or an empty string, if not available.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.AssemblyNamespaceMapperRegistry.IsAssemblyMapped(System.String)">
+      <summary>
+            Returns true if the given assembly is mapped in the registry, false otherwise.
+            </summary>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.ITypeConstraintProvider">
+      <summary>
+            Defines an interface for a provider of constraints for a given type.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.ITypeConstraintProvider.GetTypeConstraint(System.Type)">
+      <summary>
+            Returns a route constraint for the given type or null, if no constraints are available.
+            </summary>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.HtmlHelperChildActionExtension">
+      <summary>
+            Contains extensions methods for the <see cref="T:System.Web.Mvc.HtmlHelper">HtmlHelper</see> type.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.HtmlHelperChildActionExtension.Action``1(System.Web.Mvc.HtmlHelper,System.Linq.Expressions.Expression{System.Action{``0}})">
+      <summary>
+            Invokes the specified child action method and returns the result as an HTML string.
+            </summary>
+      <typeparam name="TController">The type of the controller which exposes the required action.</typeparam>
+      <param name="htmlHelper">The HTML helper instance that this method extends.</param>
+      <param name="expression">An expression used to found the required action.</param>
+      <returns>The child action result as an HTML string.</returns>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.HtmlHelperChildActionExtension.Action``1(System.Web.Mvc.HtmlHelper,System.Linq.Expressions.Expression{System.Action{``0}},System.Object)">
+      <summary>
+            Invokes the specified child action method using the specified additional parameters and returns the result as an HTML string.
+            </summary>
+      <typeparam name="TController">The type of the controller which exposes the required action.</typeparam>
+      <param name="htmlHelper">The HTML helper instance that this method extends.</param>
+      <param name="expression">An expression used to found the required action.</param>
+      <param name="additionalRouteValues">An object that contains additional parameters for a route, which can be used to provide the parameters that are
+            bound to the action method parameters. The routeValues parameter is merged with the original route values without overriding them.</param>
+      <returns>The child action result as an HTML string.</returns>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.HtmlHelperChildActionExtension.Action``1(System.Web.Mvc.HtmlHelper,System.Linq.Expressions.Expression{System.Action{``0}},System.Web.Routing.RouteValueDictionary)">
+      <summary>
+            Invokes the specified child action method using the specified additional parameters and returns the result as an HTML string.
+            </summary>
+      <typeparam name="TController">The type of the controller which exposes the required action.</typeparam>
+      <param name="htmlHelper">The HTML helper instance that this method extends.</param>
+      <param name="expression">An expression used to found the required action.</param>
+      <param name="additionalRouteValues">A dictionary that contains additional parameters for a route, which can be used to provide the parameters that are
+            bound to the action method parameters. The routeValues parameter is merged with the original route values without overriding them.</param>
+      <returns>The child action result as an HTML string.</returns>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.HtmlHelperChildActionExtension.RenderAction``1(System.Web.Mvc.HtmlHelper,System.Linq.Expressions.Expression{System.Action{``0}})">
+      <summary>
+            Invokes the specified child action method and renders the result inline in the parent view.
+            </summary>
+      <typeparam name="TController">The type of the controller which exposes the required action.</typeparam>
+      <param name="htmlHelper">The HTML helper instance that this method extends.</param>
+      <param name="expression">An expression used to found the required action.</param>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.HtmlHelperChildActionExtension.RenderAction``1(System.Web.Mvc.HtmlHelper,System.Linq.Expressions.Expression{System.Action{``0}},System.Object)">
+      <summary>
+            Invokes the specified child action method using the specified additional parameters and renders the result inline in the parent view.
+            </summary>
+      <typeparam name="TController">The type of the controller which exposes the required action.</typeparam>
+      <param name="htmlHelper">The HTML helper instance that this method extends.</param>
+      <param name="expression">An expression used to found the required action.</param>
+      <param name="additionalRouteValues">An object that contains additional parameters for a route, which can be used to provide the parameters that are
+            bound to the action method parameters. The routeValues parameter is merged with the original route values without overriding them.</param>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.HtmlHelperChildActionExtension.RenderAction``1(System.Web.Mvc.HtmlHelper,System.Linq.Expressions.Expression{System.Action{``0}},System.Web.Routing.RouteValueDictionary)">
+      <summary>
+            Invokes the specified child action method using the specified additional parameters and renders the result inline in the parent view.
+            </summary>
+      <typeparam name="TController">The type of the controller which exposes the required action.</typeparam>
+      <param name="htmlHelper">The HTML helper instance that this method extends.</param>
+      <param name="expression">An expression used to found the required action.</param>
+      <param name="additionalRouteValues">A dictionary that contains additional parameters for a route, which can be used to provide the parameters that are
+            bound to the action method parameters. The routeValues parameter is merged with the original route values without overriding them.</param>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.DefaultViewFinder">
+      <summary>
+            The default view finder implementation, which uses the underlying view engine to find views in a namespace-aware fashion.
+            </summary>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.IViewFinder">
+      <summary>
+            Defines a common interface for obejcts which can be used to find views, within Cobisi MVC Extensions.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.IViewFinder.FindView(Cobisi.Web.MvcExtensions.FindViewRequest)">
+      <summary>
+            Finds a view for the specified request.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.IViewFinder.FindPartialView(Cobisi.Web.MvcExtensions.FindPartialViewRequest)">
+      <summary>
+            Finds a partial view for the specified request.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.DefaultViewFinder.FindView(Cobisi.Web.MvcExtensions.FindViewRequest)">
+      <summary>
+            Finds a view for the specified request.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.DefaultViewFinder.FindPartialView(Cobisi.Web.MvcExtensions.FindPartialViewRequest)">
+      <summary>
+            Finds a partial view for the specified request.
+            </summary>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.FindPartialViewRequest">
+      <summary>
+            Defines a request to find a partial view.
+            </summary>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.FindViewRequestBase">
+      <summary>
+            Base class for view finding requests.
+            </summary>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.FindViewRequestBase.ViewEngine">
+      <summary>
+            Gets or sets the underlying view engine.
+            </summary>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.FindViewRequestBase.ControllerContext">
+      <summary>
+            Gets or sets the context of the MVC controller.
+            </summary>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.FindViewRequestBase.UseCache">
+      <summary>
+            Gets or sets a flag indicating whether to use cached views or not.
+            </summary>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.FindViewRequestBase.ControllerName">
+      <summary>
+            The name of the controller type, without the "Controller" suffix; commonly used to locate views.
+            </summary>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.FindViewRequestBase.ControllerFullName">
+      <summary>
+            The full name of the controller type.
+            </summary>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.FindViewRequestBase.ControllerNamespace">
+      <summary>
+            The namespace of the controller type.
+            </summary>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.FindViewRequestBase.ViewsLocation">
+      <summary>
+            The location of the views for the current route, specified via the <see cref="T:Cobisi.Web.MvcExtensions.RouteAttribute">Route attribute</see>.
+            </summary>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.FindPartialViewRequest.PartialViewName">
+      <summary>
+            Gets or sets the name of the partial view to find.
+            </summary>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.FindViewRequest">
+      <summary>
+            Defines a request to find a view.
+            </summary>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.FindViewRequest.ViewName">
+      <summary>
+            Gets or sets the name of the view to find.
+            </summary>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.FindViewRequest.MasterName">
+      <summary>
+            Gets or sets the name of the master associated with the view.
+            </summary>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.HtmlHelperFormExtension">
+      <summary>
+            Contains extensions methods for the <see cref="T:System.Web.Mvc.HtmlHelper">HtmlHelper</see> type.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.HtmlHelperFormExtension.BeginRouteForm``1(System.Web.Mvc.HtmlHelper,System.Linq.Expressions.Expression{System.Action{``0}})">
+      <summary>
+            Writes an opening <b>form</b> tag to the response. When the user submits the form, the request will be processed by the route target.
+            </summary>
+      <typeparam name="ControllerT">The type of the controller which hosts the target action.</typeparam>
+      <param name="htmlHelper">The HTML helper instance that this method extends.</param>
+      <param name="expression">A lambda expression where an action method of the target controller is called along with the desired parameters.</param>
+      <returns>An opening <b>form</b> element.</returns>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.HtmlHelperFormExtension.BeginRouteForm``1(System.Web.Mvc.HtmlHelper,System.Linq.Expressions.Expression{System.Action{``0}},System.Web.Mvc.FormMethod)">
+      <summary>
+            Writes an opening <b>form</b> tag to the response. When the user submits the form, the request will be processed by the route target.
+            </summary>
+      <typeparam name="ControllerT">The type of the controller which hosts the target action.</typeparam>
+      <param name="htmlHelper">The HTML helper instance that this method extends.</param>
+      <param name="expression">A lambda expression where an action method of the target controller is called along with the desired parameters.</param>
+      <param name="method">The HTTP method for processing the form, either GET or POST.</param>
+      <returns>An opening <b>form</b> element.</returns>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.HtmlHelperFormExtension.BeginRouteForm``1(System.Web.Mvc.HtmlHelper,System.Linq.Expressions.Expression{System.Action{``0}},System.Web.Mvc.FormMethod,System.Object)">
+      <summary>
+            Writes an opening <b>form</b> tag to the response. When the user submits the form, the request will be processed by the route target.
+            </summary>
+      <typeparam name="ControllerT">The type of the controller which hosts the target action.</typeparam>
+      <param name="htmlHelper">The HTML helper instance that this method extends.</param>
+      <param name="expression">A lambda expression where an action method of the target controller is called along with the desired parameters.</param>
+      <param name="method">The HTTP method for processing the form, either GET or POST.</param>
+      <param name="htmlAttributes">An object that contains the HTML attributes to set for the element.</param>
+      <returns>An opening <b>form</b> element.</returns>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.HtmlHelperFormExtension.BeginRouteForm``1(System.Web.Mvc.HtmlHelper,System.Linq.Expressions.Expression{System.Action{``0}},System.Web.Mvc.FormMethod,System.Collections.Generic.IDictionary{System.String,System.Object})">
+      <summary>
+            Writes an opening <b>form</b> tag to the response. When the user submits the form, the request will be processed by the route target.
+            </summary>
+      <typeparam name="ControllerT">The type of the controller which hosts the target action.</typeparam>
+      <param name="htmlHelper">The HTML helper instance that this method extends.</param>
+      <param name="expression">A lambda expression where an action method of the target controller is called along with the desired parameters.</param>
+      <param name="method">The HTTP method for processing the form, either GET or POST.</param>
+      <param name="htmlAttributes">An object that contains the HTML attributes to set for the element.</param>
+      <returns>An opening <b>form</b> element.</returns>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.HtmlHelperLinkExtension">
+      <summary>
+            Contains extensions methods for the <see cref="T:System.Web.Mvc.HtmlHelper">HtmlHelper</see> type.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.HtmlHelperLinkExtension.RouteLink``1(System.Web.Mvc.HtmlHelper,System.Linq.Expressions.Expression{System.Action{``0}},System.String)">
+      <summary>
+            Returns an anchor element (<b>a</b> element) that contains the virtual path of the specified action.
+            </summary>
+      <typeparam name="ControllerT">The type of the controller which hosts the target action.</typeparam>
+      <param name="htmlHelper">The HTML helper instance that this method extends.</param>
+      <param name="expression">A lambda expression where an action method of the target controller is called along with the desired parameters.</param>
+      <param name="linkText">The inner HTML of the anchor element.</param>
+      <returns>An anchor element (<b>a</b> element).</returns>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.HtmlHelperLinkExtension.RouteLink``1(System.Web.Mvc.HtmlHelper,System.Linq.Expressions.Expression{System.Action{``0}},System.Web.HtmlString)">
+      <summary>
+            Returns an anchor element (<b>a</b> element) that contains the virtual path of the specified action.
+            </summary>
+      <typeparam name="ControllerT">The type of the controller which hosts the target action.</typeparam>
+      <param name="htmlHelper">The HTML helper instance that this method extends.</param>
+      <param name="expression">A lambda expression where an action method of the target controller is called along with the desired parameters.</param>
+      <param name="linkText">The inner HTML of the anchor element.</param>
+      <returns>An anchor element (<b>a</b> element).</returns>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.HtmlHelperLinkExtension.RouteLink``1(System.Web.Mvc.HtmlHelper,System.Linq.Expressions.Expression{System.Action{``0}},System.String,System.Object)">
+      <summary>
+            Returns an anchor element (<b>a</b> element) that contains the virtual path of the specified action.
+            </summary>
+      <typeparam name="ControllerT">The type of the controller which hosts the target action.</typeparam>
+      <param name="htmlHelper">The HTML helper instance that this method extends.</param>
+      <param name="expression">A lambda expression where an action method of the target controller is called along with the desired parameters.</param>
+      <param name="linkText">The inner HTML of the anchor element.</param>
+      <param name="htmlAttributes">An object that contains the HTML attributes to set for the element.</param>
+      <returns>An anchor element (<b>a</b> element).</returns>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.HtmlHelperLinkExtension.RouteLink``1(System.Web.Mvc.HtmlHelper,System.Linq.Expressions.Expression{System.Action{``0}},System.Web.HtmlString,System.Object)">
+      <summary>
+            Returns an anchor element (<b>a</b> element) that contains the virtual path of the specified action.
+            </summary>
+      <typeparam name="ControllerT">The type of the controller which hosts the target action.</typeparam>
+      <param name="htmlHelper">The HTML helper instance that this method extends.</param>
+      <param name="expression">A lambda expression where an action method of the target controller is called along with the desired parameters.</param>
+      <param name="linkText">The inner HTML of the anchor element.</param>
+      <param name="htmlAttributes">An object that contains the HTML attributes to set for the element.</param>
+      <returns>An anchor element (<b>a</b> element).</returns>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.HtmlHelperLinkExtension.RouteLink``1(System.Web.Mvc.HtmlHelper,System.Linq.Expressions.Expression{System.Action{``0}},System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+      <summary>
+            Returns an anchor element (<b>a</b> element) that contains the virtual path of the specified action.
+            </summary>
+      <typeparam name="ControllerT">The type of the controller which hosts the target action.</typeparam>
+      <param name="htmlHelper">The HTML helper instance that this method extends.</param>
+      <param name="expression">A lambda expression where an action method of the target controller is called along with the desired parameters.</param>
+      <param name="linkText">The inner HTML of the anchor element.</param>
+      <param name="htmlAttributes">An object that contains the HTML attributes to set for the element.</param>
+      <returns>An anchor element (<b>a</b> element).</returns>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.HtmlHelperLinkExtension.RouteLink``1(System.Web.Mvc.HtmlHelper,System.Linq.Expressions.Expression{System.Action{``0}},System.Web.HtmlString,System.Collections.Generic.IDictionary{System.String,System.Object})">
+      <summary>
+            Returns an anchor element (<b>a</b> element) that contains the virtual path of the specified action.
+            </summary>
+      <typeparam name="ControllerT">The type of the controller which hosts the target action.</typeparam>
+      <param name="htmlHelper">The HTML helper instance that this method extends.</param>
+      <param name="expression">A lambda expression where an action method of the target controller is called along with the desired parameters.</param>
+      <param name="linkText">The inner HTML of the anchor element.</param>
+      <param name="htmlAttributes">An object that contains the HTML attributes to set for the element.</param>
+      <returns>An anchor element (<b>a</b> element).</returns>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.IEnumUrlMapper">
+      <summary>
+            Defines the methods required to map the fields of an enumeration to their respective url segments and
+            back, during the routing building and handling.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.IEnumUrlMapper.MapFieldNameToUrl(System.String)">
+      <summary>
+            Maps an enumeration field name to an url segment.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.IEnumUrlMapper.MapUrlToFieldName(System.String)">
+      <summary>
+            Maps an url segment to an enumeration field name.
+            </summary>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.DictionaryEnumUrlMapper`1">
+      <summary>
+            A simple <see cref="T:Cobisi.Web.MvcExtensions.IEnumUrlMapper" /> implementation that stores a bidirectional link from enumerations
+            field names to urls and back, using a dictionary.
+            </summary>
+      <typeparam name="T">The enumerated type to create an url mapper for.</typeparam>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.DictionaryEnumUrlMapper`1.Map(`0,System.String)">
+      <summary>
+            Adds a mapping from the specified enumeration field to a target url.
+            </summary>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.EnumUrlMapperRegistry">
+      <summary>
+            Allows to register and retrieve url mappers for enumerated types.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.EnumUrlMapperRegistry.Clear">
+      <summary>
+            Removes all the mappers registrations.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.EnumUrlMapperRegistry.Register(System.Type,Cobisi.Web.MvcExtensions.IEnumUrlMapper)">
+      <summary>
+            Register an url mapper for a specific enumerated type.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.EnumUrlMapperRegistry.Unregister(System.Type)">
+      <summary>
+            Unregister an url mapper registration for a specific enumerated type.
+            </summary>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.Exceptions.RouteConfigurationException">
+      <summary>
+            The exception that is thrown when the component detects an invalid configuration for one or more of the routes it manages.
+            </summary>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.Exceptions.ComponentException">
+      <summary>
+            The base type for specific exceptions thrown by the component.
+            </summary>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.RouteViaAttribute">
+      <summary>
+            Allows to contribute to the routing by explicitly setting a common url prefix for all the actions
+            of a target controller type.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.RouteViaAttribute.#ctor(System.String)">
+      <summary>
+            Contributes to the routing by explicitly setting a common url prefix for all the actions
+            of the target controller type.
+            </summary>
+      <param name="url">A common url prefix for all the actions of the target controller type.</param>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.RouteViaAttribute.Url">
+      <summary>
+            Returns the common url prefix for all the actions of the target controller type.
+            </summary>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.Exceptions.LicenseException">
+      <summary>
+            The exception that is thrown when the component detects an invalid license or finds a discrepancy with the
+            current licensing scheme.
+            </summary>
+      <exclude />
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.RouteAttribute">
+      <summary>
+            Adds a declarative url route to the specified action method.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.RouteAttribute.#ctor(System.String)">
+      <summary>
+            Adds a declarative url route to the specified action method, using the specified url.
+            </summary>
+      <param name="url">The url of the route, relative to the controller (specified by applying the <see cref="T:Cobisi.Web.MvcExtensions.RouteViaAttribute">RouteVia</see>
+            attribute to the controller type which owns this action method). Valid placeholders include:
+            <list type="bullet"><item><term>~</term><description>A tilde sequence at the beginning of your url makes the engine skip all of the previously defined url segments and
+                    go to the root level, as with the standard ASP.NET url resolver.
+                        <example>In this example, the engine would resolve the url as ~/qux
+                            <code>
+                            [RouteVia("~/foo/bar/baz")]
+                            public class MyController
+                            {
+                                [Route("~/qux")]
+                                public ActionResult MyAction()
+                                {
+                                    // TODO: Implement this action method.
+                                }
+                            }
+                            </code></example></description></item><item><term>..</term><description>A double dot sequence in your url makes the engine skip the previous url segment and go one level up, as in any modern
+                    file system and with normal urls.
+                        <example>In this example, the engine would resolve the url as ~/foo/qux
+                            <code>
+                            [RouteVia("~/foo/bar/baz")]
+                            public class MyController
+                            {
+                                [Route("../../qux")]
+                                public ActionResult MyAction()
+                                {
+                                    // TODO: Implement this action method.
+                                }
+                            }
+                            </code></example></description></item></list></param>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.RouteAttribute.Url">
+      <summary>
+            The url route for the action method.
+            </summary>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.RouteAttribute.Priority">
+      <summary>
+            The priority of this route, used to prefer one route over another in the event of an url
+            conflict. The system processes declarative routes according to their priorities, from higher
+            values to lower ones (including negative numbers). The default priority value is 0.
+            </summary>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.RouteAttribute.TrailingSlashBehavior">
+      <summary>
+            Sets the rule to follow while handling the trailing slash for the url.
+            </summary>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.RouteAttribute.ViewsLocation">
+      <summary>
+            Sets a custom location for the views belonging to the target action.
+            <remarks>If not set, the system will try to find the views on the folder that resembles the structure of the namespace
+            plus the name of the controller.</remarks></summary>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.ControllerExtensions">
+      <summary>
+            Contains extensions methods for the MVC <seealso cref="T:System.Web.Mvc.Controller">Controller</seealso> type.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.ControllerExtensions.RedirectToDeclarativeRoute``1(System.Web.Mvc.Controller,System.Linq.Expressions.Expression{System.Action{``0}})">
+      <summary>
+            Redirects the request to a new url, based on a lambda expression that defines the target action method invocation.
+            </summary>
+      <example>In this example, calling the action on the second controller via ~/foo/bar/baz will result
+            in the client being redirected to ~/first/great-action.
+            <code>
+            [RouteVia("~/first")]
+            public class FirstController : Controller
+            {
+                [Route("great-action", "FirstControllerMyGreatAction")]
+                public ActionResult MyGreatAction()
+                {
+                    // TODO: Implement this action
+                }
+            }
+            
+            [RouteVia("~/foo/bar")]
+            public class SecondController : Controller
+            {
+                [Route("baz")]
+                public ActionResult MyFirstAction()
+                {
+                    return this.RedirectToDeclarativeRoute&lt;FirstController&gt;(c =&gt; c.MyGreatAction());
+                }
+            }
+            </code></example>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.TrailingSlashBehavior">
+      <summary>
+            Defines the options available to handle the trailing slash in a url route.
+            </summary>
+      <remarks>
+        <para>Most search engines treats urls that differ only in the trailing slash as if they were
+            different entities, pointing to different content and with different rank values; these two urls,
+            for example, are completely different to a web client eyes:</para>
+        <list>
+          <item>~/foo/bar</item>
+          <item>~/foo/bar/</item>
+        </list>
+        <para>From a SEO point of view, it would be better to choose a trailing slash behavior for an action method and place
+            permanent redirects to the preferred url.</para>
+      </remarks>
+    </member>
+    <member name="F:Cobisi.Web.MvcExtensions.TrailingSlashBehavior.Optional">
+      <summary>
+            The route matches with or without the trailing slash; no redirect is performed.
+            </summary>
+      <remarks>This is the default ASP.NET MVC behavior for handling trailing slashes.</remarks>
+    </member>
+    <member name="F:Cobisi.Web.MvcExtensions.TrailingSlashBehavior.AddPermanent">
+      <summary>
+            Preference is given to the route with the trailing slash; the system issues a permanent
+            redirect (HTTP 301) to that version in the event it detects the url without the trailing slash.
+            </summary>
+    </member>
+    <member name="F:Cobisi.Web.MvcExtensions.TrailingSlashBehavior.Add">
+      <summary>
+            Preference is given to the route with the trailing slash; the system issues a redirect (HTTP 302)
+            to that version in the event it detects the url without the trailing slash.
+            </summary>
+    </member>
+    <member name="F:Cobisi.Web.MvcExtensions.TrailingSlashBehavior.RemovePermanent">
+      <summary>
+            Preference is given to the route without the trailing slash; the system issues a permanent
+            redirect (HTTP 301) to that version in the event it detects the url with the trailing slash.
+            </summary>
+    </member>
+    <member name="F:Cobisi.Web.MvcExtensions.TrailingSlashBehavior.Remove">
+      <summary>
+            Preference is given to the route without the trailing slash; the system issues a redirect (HTTP 302)
+            to that version in the event it detects the url with the trailing slash.
+            </summary>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.TypeDefaultConstraintRegistry">
+      <summary>
+            Allows to register and retrieve default route constraints for types involved in the parameters matching process.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.TypeDefaultConstraintRegistry.Clear">
+      <summary>
+            Removes all the default constraints for the types.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.TypeDefaultConstraintRegistry.Register(System.Type,System.Object)">
+      <summary>
+            Registers a default constraint for a specific type.
+            <remarks>If a default constraint is already registered for the type, the method replaces it with the new one.</remarks></summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.TypeDefaultConstraintRegistry.Register(Cobisi.Web.MvcExtensions.ITypeConstraintProvider)">
+      <summary>
+            Registers a provider for type constraints.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.TypeDefaultConstraintRegistry.Unregister(System.Type)">
+      <summary>
+            Unregisters the default constraint for a specific type, if available.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.TypeDefaultConstraintRegistry.Unregister(Cobisi.Web.MvcExtensions.ITypeConstraintProvider)">
+      <summary>
+            Unregisters a provider for type constraints, if available.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.TypeDefaultConstraintRegistry.Map(System.Type)">
+      <summary>
+            Returns the default constraint for a specific type or null, if not available.
+            </summary>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.UrlHelperExtension">
+      <summary>
+            Contains extensions methods for the <see cref="T:System.Web.Mvc.UrlHelper">UrlHelper</see> type.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.UrlHelperExtension.RouteUrl``1(System.Web.Mvc.UrlHelper,System.Linq.Expressions.Expression{System.Action{``0}})">
+      <summary>
+            Generates a fully qualified URL with the provided values by using the specified action method expression.
+            </summary>
+      <typeparam name="TController">The type of the controller which hosts the target action.</typeparam>
+      <param name="urlHelper">The URL helper instance that this method extends.</param>
+      <param name="expression">A lambda expression where an action method of the target controller is called along with the desired parameters.</param>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.EnumUrlAttribute">
+      <summary>
+            Defines an URL segment for an enumerated type field, used during routing generation and handling.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.EnumUrlAttribute.#ctor(System.String)">
+      <summary>
+            Defines an url segment for an enumerated type field, used during routing generation and handling.
+            </summary>
+      <param name="url">An URL segment for an enumerated type field, used during routing generation and handling.</param>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.EnumUrlAttribute.Url">
+      <summary>
+            Returns the url bound to the target enumeration field.
+            </summary>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.RoutePartAttribute">
+      <summary>
+            When applied to an MVC action method parameter, instructs the system to include its value as part of the
+            route itself, instead of processing it by way of form or query string.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.RoutePartAttribute.#ctor">
+      <summary>
+            Marks an action method parameter as part of the route for the action.
+            </summary>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.RoutePartAttribute.AllowSlash">
+      <summary>
+            Gets or sets whether the parameter will allow slashes within its content.
+            </summary>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.RoutePartAttribute.Constraint">
+      <summary>
+            Gets or sets a constraint that specifies wheter the parameter is valid or not. Can be a regular
+            expression or a type.
+            <remarks>Please note that in the event a type is passed, it must implement the <see cref="T:System.Web.Routing.IRouteConstraint">IRouteConstraint</see>
+            interface and have a parameterless constructor.</remarks></summary>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.RoutePartAttribute.UrlSuffix">
+      <summary>
+            A suffix to apply to the url route, after this route part.
+            </summary>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.INamespaceMapper">
+      <summary>
+            Defines the methods every namespace mapper must implement.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.INamespaceMapper.MapNamespaceToUrl(System.String)">
+      <summary>
+            Maps the specified namespace to an url.
+            </summary>
+    </member>
+    <member name="T:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration">
+      <summary>
+            Allows to register declarative url routes in the application.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration.RegisterRoutes">
+      <summary>
+            Enumerates all of the declarative routes exposed by the calling assembly and registers them in the default route table.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration.RegisterRoutes(System.String)">
+      <summary>
+            Enumerates all of the declarative routes exposed by the calling assembly and registers them in the default route table,
+            using the specified default namespace as a path prefix for locating views.
+            </summary>
+      <param name="defaultNamespace">The default namespace for the calling assembly, used as a path prefix for locating views.</param>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration.RegisterRoutes(System.Web.Routing.RouteCollection,System.String)">
+      <summary>
+            Enumerates all of the declarative routes exposed by the calling assembly and registers them in the specified route collection,
+            using the specified default namespace as a path prefix for locating views.
+            </summary>
+      <param name="routes">The route collection used to register the declarative routes.</param>
+      <param name="defaultNamespace">The default namespace for the calling assembly, used as a path prefix for locating views.</param>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration.RegisterRoutes(System.Reflection.Assembly,System.String)">
+      <summary>
+            Enumerates all of the declarative routes exposed by the specified assembly and registers them in the default route table,
+            using the specified default namespace as a path prefix for locating views.
+            </summary>
+      <param name="assembly">The assembly used to enumerate the declarative routes from.</param>
+      <param name="defaultNamespace">The default namespace for the calling assembly, used as a path prefix for locating views.</param>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration.RegisterRoutes(System.Web.Routing.RouteCollection,System.Reflection.Assembly,System.String)">
+      <summary>
+            Enumerates all of the declarative routes exposed by the specified assembly and registers them in the specified route collection,
+            using the specified default namespace as a path prefix for locating views.
+            </summary>
+      <param name="routes">The route collection used to register the declarative routes.</param>
+      <param name="assembly">The assembly used to enumerate the declarative routes from.</param>
+      <param name="defaultNamespace">The default namespace for the calling assembly, used as a path prefix for locating views.</param>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration.RegisterRoutes(System.Func{System.String,System.String},System.String)">
+      <summary>
+            Enumerates all of the declarative routes exposed by the calling assembly and registers them in the default route table,
+            using the specified default namespace as a path prefix for locating views and the specified function to map the namespaces of
+            the controllers to their respective urls.
+            </summary>
+      <param name="namespaceMapper">A function used to map the namespaces of the controllers to their respective urls.</param>
+      <param name="defaultNamespace">The default namespace for the calling assembly, used as a path prefix for locating views.</param>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration.RegisterRoutes(System.Web.Routing.RouteCollection,System.Func{System.String,System.String},System.String)">
+      <summary>
+            Enumerates all of the declarative routes exposed by the calling assembly and registers them in the specified route collection,
+            using the specified default namespace as a path prefix for locating views and the specified function to map the namespaces of
+            the controllers to their respective urls.
+            </summary>
+      <param name="routes">The route collection used to register the declarative routes.</param>
+      <param name="namespaceMapper">A function used to map the namespaces of the controllers to their respective urls.</param>
+      <param name="defaultNamespace">The default namespace for the calling assembly, used as a path prefix for locating views.</param>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration.RegisterRoutes(System.Reflection.Assembly,System.Func{System.String,System.String},System.String)">
+      <summary>
+            Enumerates all of the declarative routes exposed by the specified assembly and registers them in the default route table,
+            using the specified default namespace as a path prefix for locating views and the specified function to map the namespaces of
+            the controllers to their respective urls.
+            </summary>
+      <param name="assembly">The assembly used to enumerate the declarative routes from.</param>
+      <param name="namespaceMapper">A function used to map the namespaces of the controllers to their respective urls.</param>
+      <param name="defaultNamespace">The default namespace for the calling assembly, used as a path prefix for locating views.</param>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration.RegisterRoutes(System.Web.Routing.RouteCollection,System.Reflection.Assembly,System.Func{System.String,System.String},System.String)">
+      <summary>
+            Enumerates all of the declarative routes exposed by the specified assembly and registers them in the specified route collection,
+            using the specified default namespace as a path prefix for locating views and the specified function to map the namespaces of
+            the controllers to their respective urls.
+            </summary>
+      <param name="routes">The route collection used to register the declarative routes.</param>
+      <param name="assembly">The assembly used to enumerate the declarative routes from.</param>
+      <param name="namespaceMapper">A function used to map the namespaces of the controllers to their respective urls.</param>
+      <param name="defaultNamespace">The default namespace for the calling assembly, used as a path prefix for locating views.</param>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration.RegisterRoutes(System.Reflection.Assembly,Cobisi.Web.MvcExtensions.INamespaceMapper,System.String)">
+      <summary>
+            Enumerates all of the declarative routes exposed by the specified assembly and registers them in the default route table,
+            using the specified default namespace as a path prefix for locating views and the specified namespace mapper to map the namespaces of
+            the controllers to their respective urls.
+            </summary>
+      <param name="assembly">The assembly used to enumerate the declarative routes from.</param>
+      <param name="namespaceMapper">An object implementing the <see cref="T:Cobisi.Web.MvcExtensions.INamespaceMapper">INamespaceMapper</see> interface, used to map the
+            namespaces of the controllers to their respective urls.</param>
+      <param name="defaultNamespace">The default namespace for the calling assembly, used as a path prefix for locating views.</param>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration.RegisterRoutes(System.Web.Routing.RouteCollection,System.Reflection.Assembly,Cobisi.Web.MvcExtensions.INamespaceMapper,System.String)">
+      <summary>
+            Enumerates all of the declarative routes exposed by the specified assembly and registers them in the specified route collection,
+            using the specified default namespace as a path prefix for locating views and the specified namespace mapper to map the namespaces of
+            the controllers to their respective urls.
+            </summary>
+      <param name="routes">The route collection used to register the declarative routes.</param>
+      <param name="assembly">The assembly used to enumerate the declarative routes from.</param>
+      <param name="namespaceMapper">An object implementing the <see cref="T:Cobisi.Web.MvcExtensions.INamespaceMapper">INamespaceMapper</see> interface, used to map the
+            namespaces of the controllers to their respective urls.</param>
+      <param name="defaultNamespace">The default namespace for the calling assembly, used as a path prefix for locating views.</param>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration.SetupViewEngines">
+      <summary>
+            Makes the available view engines aware of the namespace-based paths of the views, using the default view finder.
+            </summary>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration.SetupViewEngines(System.Web.Mvc.ViewEngineCollection)">
+      <summary>
+            Makes the specified view engines aware of the namespace-based paths of the views, using the default view finder.
+            </summary>
+      <remarks>Use the parameterless <see cref="M:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration.SetupViewEngines">SetupViewEngines()</see> method overload to specify
+            all of the view engines available to the application.</remarks>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration.SetupViewEngines(System.Web.Mvc.ViewEngineCollection,Cobisi.Web.MvcExtensions.IViewFinder)">
+      <summary>
+            Makes the specified view engines aware of the namespace-based paths of the views.
+            </summary>
+      <remarks>Use the parameterless <see cref="M:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration.SetupViewEngines">SetupViewEngines()</see> method overload to specify
+            all of the view engines available to the application and the default view finder.</remarks>
+    </member>
+    <member name="M:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration.RegisterArea(System.Web.Mvc.AreaRegistration,System.Web.Mvc.AreaRegistrationContext,System.String)">
+      <summary>
+            Registers an area within the declarative routing engine using the specified area's context information and
+            the specified default namespace as a path prefix for locating views within the namespace(s) for the area.
+            </summary>
+      <remarks>To have effect, registrations for areas must happen before registrations for routes.</remarks>
+      <param name="areaRegistration">Encapsulates the custom area registration of the web application.</param>
+      <param name="context">Encapsulates the information that is required in order to register the area.</param>
+      <param name="defaultNamespace">The default namespace for the area, used as a path prefix for locating views.</param>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration.RuntimeLicenseKey">
+      <summary>
+            The runtime license key for Cobisi MVC Extensions, used to unlock the library.
+            </summary>
+      <remarks>Please see the product website at http://cobisi.com/seo-mvc-extensions for additional details about its license model.</remarks>
+    </member>
+    <member name="P:Cobisi.Web.MvcExtensions.DeclarativeRouteRegistration.DefaultTrailingSlashBehavior">
+      <summary>
+            Allows to set how the system treats the trailing, ending slash for URLs whenever declarative routes
+            do not have an explicit <see cref="P:Cobisi.Web.MvcExtensions.RouteAttribute.TrailingSlashBehavior">TrailingSlashBehavior</see> option set.
+            </summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,30 @@
+﻿<div class="row padding-left">
+    <div class="container-fluid">
+        <h3 class="">Prodotti</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Codice</th>
+                    <th>Descrizione</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="product in products">
+                <td>{{product.productId}}</td>
+                <td>{{product.productCode}}</td>
+                <td>{{product.description}}</td>
+                <td><a ng-href="#/products/edit/{{product.productId}}" data-toggle="tooltip" title="Modifica" tooltip><i class="fa fa-pencil-square-o fa-fw icon-large"></i></a></td>
+                <td ng-if="!product.isContainedInPriceList">
+                    <i ng-click="deleteProduct(product.productId)" class="fa fa-remove fa-fw text-danger icon-large cur-p" data-toggle="tooltip" title="Cancella" tooltip></i>
+                </td>
+                <td ng-if="product.isContainedInPriceList">
+                    <i class="fa fa-remove fa-fw text-muted icon-large" data-toggle="tooltip"  title="Il prodotto non può essere cancellato in quanto presente in uno o più listini." tooltip></i>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

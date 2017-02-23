@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EurisModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="PriceList">
+    <Key>
+      <PropertyRef Name="PriceListId" />
+    </Key>
+    <Property Name="PriceListId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PriceListCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="PriceListProduct">
+    <Key>
+      <PropertyRef Name="PriceListId" />
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="PriceListId" Type="int" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <Association Name="FK_PriceListProduct_PriceListId">
+    <End Role="PriceList" Type="Self.PriceList" Multiplicity="1" />
+    <End Role="PriceListProduct" Type="Self.PriceListProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PriceList">
+        <PropertyRef Name="PriceListId" />
+      </Principal>
+      <Dependent Role="PriceListProduct">
+        <PropertyRef Name="PriceListId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PriceListProduct_ProductId">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="PriceListProduct" Type="Self.PriceListProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="PriceListProduct">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EurisModelStoreContainer">
+    <EntitySet Name="PriceList" EntityType="Self.PriceList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PriceListProduct" EntityType="Self.PriceListProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_PriceListProduct_PriceListId" Association="Self.FK_PriceListProduct_PriceListId">
+      <End Role="PriceList" EntitySet="PriceList" />
+      <End Role="PriceListProduct" EntitySet="PriceListProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PriceListProduct_ProductId" Association="Self.FK_PriceListProduct_ProductId">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="PriceListProduct" EntitySet="PriceListProduct" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

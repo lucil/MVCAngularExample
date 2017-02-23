@@ -1,0 +1,9 @@
+C:\Development\EURISTest_vs2013\EURIS.Database\bin\Debug\EURIS.Database.dacpac
+C:\Development\EURISTest_vs2013\EURIS.Database\bin\Debug\EURIS.Database.dll
+C:\Development\EURISTest_vs2013\EURIS.Database\bin\Debug\EURIS.Database.pdb
+C:\Development\EURISTest_vs2013\EURIS.Database\obj\Debug\EURIS.Database.dll
+C:\Development\EURISTest_vs2013\EURIS.Database\obj\Debug\EURIS.Database.pdb
+C:\Development\EURISTest_vs2013\EURIS.Database\obj\Debug\Model.xml
+C:\Development\EURISTest_vs2013\EURIS.Database\obj\Debug\refactor.xml
+C:\Development\EURISTest_vs2013\EURIS.Database\obj\Debug\postdeploy.sql
+C:\Development\EURISTest_vs2013\EURIS.Database\obj\Debug\predeploy.sql

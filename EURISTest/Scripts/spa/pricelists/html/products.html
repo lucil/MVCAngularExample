@@ -1,0 +1,24 @@
+﻿<div class="row padding-left">
+    <div class="container-fluid">
+        <h3 class="">Prodotti associati al listino {{priceList.priceListCode}} ({{priceList.description}})</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Codice</th>
+                    <th>Descrizione</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in products">
+                    <td>{{product.productId}}</td>
+                    <td>{{product.productCode}}</td>
+                    <td>{{product.description}}</td>
+                    <td><a ng-href="#/products/edit/{{product.productId}}" data-toggle="tooltip" title="Modifica" tooltip><i class="fa fa-pencil-square-o fa-fw icon-large"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

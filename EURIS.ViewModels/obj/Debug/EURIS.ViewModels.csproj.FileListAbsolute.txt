@@ -1,0 +1,4 @@
+C:\Development\EURISTest_vs2013\EURIS.ViewModels\bin\Debug\EURIS.ViewModels.dll
+C:\Development\EURISTest_vs2013\EURIS.ViewModels\bin\Debug\EURIS.ViewModels.pdb
+C:\Development\EURISTest_vs2013\EURIS.ViewModels\obj\Debug\EURIS.ViewModels.dll
+C:\Development\EURISTest_vs2013\EURIS.ViewModels\obj\Debug\EURIS.ViewModels.pdb

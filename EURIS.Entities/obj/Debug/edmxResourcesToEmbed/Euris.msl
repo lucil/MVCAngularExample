@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EurisModelStoreContainer" CdmEntityContainer="EurisEntities">
+    <EntitySetMapping Name="PriceList">
+      <EntityTypeMapping TypeName="EurisModel.PriceList">
+        <MappingFragment StoreEntitySet="PriceList">
+          <ScalarProperty Name="PriceListId" ColumnName="PriceListId" />
+          <ScalarProperty Name="PriceListCode" ColumnName="PriceListCode" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="EurisModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="PriceListProduct" TypeName="EurisModel.PriceListProduct" StoreEntitySet="PriceListProduct">
+      <EndProperty Name="PriceList">
+        <ScalarProperty Name="PriceListId" ColumnName="PriceListId" />
+      </EndProperty>
+      <EndProperty Name="Product">
+        <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

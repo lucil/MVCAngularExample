@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EurisModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PriceList">
+    <Key>
+      <PropertyRef Name="PriceListId" />
+    </Key>
+    <Property Name="PriceListId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PriceListCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product" Relationship="Self.PriceListProduct" FromRole="PriceList" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PriceList" Relationship="Self.PriceListProduct" FromRole="Product" ToRole="PriceList" />
+  </EntityType>
+  <Association Name="PriceListProduct">
+    <End Role="PriceList" Type="Self.PriceList" Multiplicity="*" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="EurisEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PriceList" EntityType="Self.PriceList" />
+    <EntitySet Name="Product" EntityType="Self.Product" />
+    <AssociationSet Name="PriceListProduct" Association="Self.PriceListProduct">
+      <End Role="PriceList" EntitySet="PriceList" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
